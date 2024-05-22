@@ -26,6 +26,7 @@ def is_balanced(thestr):
     return True
 
 test_statements = [
+    "(}",
     "print('Hello World!')",
     "a(x[i]) == b(x[i])",
     "{c for c in a(x)}",

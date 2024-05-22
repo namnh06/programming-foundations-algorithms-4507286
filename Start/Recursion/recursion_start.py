@@ -3,12 +3,18 @@
 
 # 2^4 = 2*2*2*2 = 16
 def power(num, pwr):
-    pass
+    # breaking point
+    if pwr == 0:
+        return 1
+    return num * power(num, pwr - 1)
 
 # 5! = 5*4*3*2*1
 # Special case: 0! is 1, because... math
 def factorial(num):
-    pass
+    # breaking point
+    if num == 0:
+        return 1
+    return num * factorial(num-1) 
 
 
 print(f"5 to the power of 3 is {power(5, 3)}")

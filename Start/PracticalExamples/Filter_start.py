@@ -8,10 +8,22 @@ items = ["apple", "pear", "orange", "banana", "apple",
          "apple", "kiwi", "pear", "apple", "orange"]
 
 # TODO: create a set to perform a filter
-
+dataset = set()
 
 # TODO: loop over each item and add to the set
-
+for i in items:
+  dataset.add(i)
+print(dataset)
 
 # TODO: Count the unique letters in a sentence
+datalist = []
 sentence = "The quick brown fox jumps over the lazy dog."
+for i in sentence:
+  if i != " ":
+    datalist.append(i)
+
+sentence_no_space = ''.join(sentence.split(' '))
+print(datalist)
+print(len(datalist))
+print(sentence_no_space)
+print(len(sentence_no_space))

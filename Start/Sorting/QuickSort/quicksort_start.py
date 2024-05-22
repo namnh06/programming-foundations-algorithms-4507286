@@ -4,7 +4,6 @@
 
 items = [20, 6, 8, 53, 56, 23, 87, 41, 49, 19]
 
-
 def quickSort(dataset, first, last):
     if first < last:
         # calculate the split point
@@ -17,22 +16,29 @@ def quickSort(dataset, first, last):
 
 def partition(datavalues, first, last):
     # TODO: choose the first item as the pivot value
-    
+    pivot = datavalues[first]
     # TODO: establish the upper and lower indexes
-
+    lower = first + 1
+    upper = last
     # start searching for the crossing point
     done = False
     while not done:
         # TODO: advance the lower index
-
+        while lower <= upper and datavalues[lower] < pivot:
+            lower+=1
         # TODO: advance the upper index
-
+        while upper >= lower and datavalues[upper] > pivot:
+            upper-=1
         # TODO: if the two indexes cross, we have found the split point
-        pass
+        if upper < lower:
+            done = True
+        else:
+            datavalues[lower], datavalues[upper] = datavalues[upper], datavalues[lower]
 
     # TODO: when the split point is found, exchange the pivot value
-
+    datavalues[first], datavalues[upper] = datavalues[upper], datavalues[first]
     # TODO: return the split point index
+    return upper
 
 
 # test the merge sort with data

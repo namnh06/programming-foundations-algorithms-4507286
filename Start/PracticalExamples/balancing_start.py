@@ -3,11 +3,30 @@
 
 
 def is_balanced(thestr):
-    # TODO: Your code goes here
-                
+    stack = []
+    open_parentheses = ['(', '{', '[']
+    close_parentheses = [')', '}', ']']
+    for i in thestr:
+        if i in open_parentheses:
+            stack.append(i)
+
+        if i in close_parentheses:
+            if len(stack) < 1:
+                return False
+            test = stack.pop()
+            if test == '(' and i != ')':
+                return False
+            if test == '{' and i != '}':
+                return False
+            if test == '[' and i != ']':
+                return False
+    
+    if len(stack) > 0:
+        return False
     return True
 
 test_statements = [
+    "(}",
     "print('Hello World!')",
     "a(x[i]) == b(x[i])",
     "{c for c in a(x)}",

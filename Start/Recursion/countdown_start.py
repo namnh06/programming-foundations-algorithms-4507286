@@ -3,7 +3,11 @@
 
 
 def countdown(x):
-    return
+    # breaking point
+    if x == 0:
+        return None
+    print(f'{x} ...')
+    return countdown(x-1)
 
 
 countdown(5)
